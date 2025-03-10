@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_chat/config/theme/app_theme.dart';
 
 class FlutterChatApp extends StatelessWidget {
   const FlutterChatApp({super.key});
@@ -7,14 +8,12 @@ class FlutterChatApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: AppTheme(selectedColor: 7).theme(),
       title: 'Material App',
       home: Scaffold(
         appBar: AppBar(title: const Text('Material App Bar')),
         body: Center(
-          child: FilledButton.tonal(
-            onPressed: () {},
-            child: const Text('Click Me'),
-          ),
+          child: FilledButton.tonal(onPressed: () {}, child: Text('Click Me')),
         ),
       ),
     );
