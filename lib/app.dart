@@ -9,6 +9,7 @@ class FlutterChatApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      showPerformanceOverlay: false,
       theme: AppTheme(selectedColor: 7).theme(),
       title: 'Material App',
       home: ChatScreen(),
