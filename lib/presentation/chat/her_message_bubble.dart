@@ -39,8 +39,27 @@ class _ImageBubble extends StatelessWidget {
       borderRadius: BorderRadius.circular(20),
       child: Image.network(
         'https://yesno.wtf/assets/no/25-55dc62642f92cf4110659b3c80e0d7ec.gif',
-        width: 250,
+        width: size.width * 0.5,
+        height: 150,
         fit: BoxFit.cover,
+        loadingBuilder: (context, child, loadingProgress) {
+          if (loadingProgress == null) {
+            return child;
+          }
+
+          return Container(
+            width: 150,
+            height: 150,
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+            child: CircularProgressIndicator(
+              value:
+                  loadingProgress.expectedTotalBytes != null
+                      ? loadingProgress.cumulativeBytesLoaded /
+                          loadingProgress.expectedTotalBytes!
+                      : null,
+            ),
+          );
+        },
       ),
     );
   }
