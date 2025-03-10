@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chat/presentation/chat/her_message_bubble.dart';
 import 'package:flutter_chat/presentation/chat/my_message_bubble.dart';
+import 'package:flutter_chat/presentation/widgets/shared/message_field_box.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
@@ -46,6 +47,7 @@ class _ChatView extends StatelessWidget {
                 },
               ),
             ),
+            MessageFieldBox(),
           ],
         ),
       ),
