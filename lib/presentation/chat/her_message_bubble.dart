@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_chat/domain/entities/message.dart';
 
 class HerMessageBubble extends StatelessWidget {
-  const HerMessageBubble({super.key});
+  final Message message;
+  const HerMessageBubble({super.key, required this.message});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,7 @@ class HerMessageBubble extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Text(
-              'Her Message Bubble',
+              message.text,
               style: TextStyle(color: Colors.white),
             ),
           ),
@@ -37,8 +39,7 @@ class _ImageBubble extends StatelessWidget {
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
-      child: Image.network(
-        'https://yesno.wtf/assets/no/25-55dc62642f92cf4110659b3c80e0d7ec.gif',
+      child: Image.network('https://yesno.wtf/assets/yes/11-a23cbde4ae018bbda812d2d8b2b8fc6c.gif',
         width: size.width * 0.5,
         height: 150,
         fit: BoxFit.cover,
