@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chat/domain/entities/message.dart';
-import 'package:flutter_chat/presentation/chat/her_message_bubble.dart';
-import 'package:flutter_chat/presentation/chat/my_message_bubble.dart';
 import 'package:flutter_chat/presentation/providers/chat_provider.dart';
+import 'package:flutter_chat/presentation/widgets/chat/her_message_bubble.dart';
+import 'package:flutter_chat/presentation/widgets/chat/my_message_bubble.dart';
 import 'package:flutter_chat/presentation/widgets/shared/message_field_box.dart';
 import 'package:provider/provider.dart';
 
@@ -51,7 +51,10 @@ class _ChatView extends StatelessWidget {
                 },
               ),
             ),
-            MessageFieldBox(),
+            MessageFieldBox(
+              // onValue: (value) => chatProvider.sendMessage(value),
+              onValue: chatProvider.sendMessage,
+            ),
           ],
         ),
       ),
